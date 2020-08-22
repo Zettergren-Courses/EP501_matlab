@@ -1,25 +1,3 @@
-%% Illustrate vanilla forward elimination
-nref=6;                %system size for larger reference problem
-Aref=randn(nref,nref);    %augmented matrix containing RHS of system of equations, in practice you'd want to check conditioning...
-bref=randn(nref,1);    %RHS
-
-
-%% Use the Gaussian elimination function to solve the same system (include scaled pivoting)
-[Amod,ord]=Gauss_elim(Aref,bref);
-
-disp('Elimination with scaled pivoting on matrix:  ');
-disp(Amod(ord,:));
-xgauss=backsub(Amod(ord,:));
-disp('Back substitution solution using Gaussian elimination result:  ');
-disp(xgauss);
-
-
-%% Print step by step solution (Gauss elimination) for a simple system to illustrate
-disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
-[Amodsmall,ord]=Gauss_elim(A,b,true);
-disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
-
-
 %% Solve a diagonally dominant system using Jacobi iteration
 nit=10;
 Ait=diag(-1*ones(nit-1,1),-1)+diag(-1*ones(nit-1,1),1)+diag(4*ones(nit,1),0);    %this must be diagonally dominant or else the method won't converge
