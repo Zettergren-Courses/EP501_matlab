@@ -189,46 +189,44 @@ disp(psi(:,2));
 disp(psi(:,3));
 
 
-
-%% Special functions, illustration of using greek letters in strings
-t=linspace(-3,3,100);          %indep variable for gamma and erf
-rho=linspace(0,10,100);        %radial independent variable
-costh=linspace(-1,1,100);      %cos(theta) variable
-
-figure(4);
-
-subplot(2,2,1);
-plot(t,gamma(t));              %gamma function
-xlabel('t');
-ylabel('\Gamma (t)');
-
-subplot(2,2,2);
-plot(t,erf(t));                %error function
-xlabel('t');
-ylabel('erf(t)');
-
-subplot(2,2,3);
-plot(rho,besselj(0,rho),rho,besselj(1,rho),rho,besselj(2,rho),rho,besselj(3,rho))   %first arg to bessel function is order, second is indep variable
-xlabel('\rho');
-ylabel('J_\nu(\rho)');
-
-%associated legendre function
-P0=legendre(0,costh);
-P1data=legendre(1,costh);
-P1=P1data(1,:);                %pick the m=0 associated legendre function which is an ordinatry legendre polynomial
-P2data=legendre(2,costh);
-P2=P2data(1,:);
-P3data=legendre(3,costh);
-P3=P3data(3,:);
-subplot(2,2,4);
-plot(costh,P0,costh,P1,costh,P2,costh,P3);
-xlabel('cos \theta');
-ylabel('P_n (cos \theta)');
+% %% Special functions, illustration of using greek letters in strings
+% t=linspace(-3,3,100);          %indep variable for gamma and erf
+% rho=linspace(0,10,100);        %radial independent variable
+% costh=linspace(-1,1,100);      %cos(theta) variable
+% 
+% figure(4);
+% 
+% subplot(2,2,1);
+% plot(t,gamma(t));              %gamma function
+% xlabel('t');
+% ylabel('\Gamma (t)');
+% 
+% subplot(2,2,2);
+% plot(t,erf(t));                %error function
+% xlabel('t');
+% ylabel('erf(t)');
+% 
+% subplot(2,2,3);
+% plot(rho,besselj(0,rho),rho,besselj(1,rho),rho,besselj(2,rho),rho,besselj(3,rho))   %first arg to bessel function is order, second is indep variable
+% xlabel('\rho');
+% ylabel('J_\nu(\rho)');
+% 
+% %associated legendre function
+% P0=legendre(0,costh);
+% P1data=legendre(1,costh);
+% P1=P1data(1,:);                %pick the m=0 associated legendre function which is an ordinatry legendre polynomial
+% P2data=legendre(2,costh);
+% P2=P2data(1,:);
+% P3data=legendre(3,costh);
+% P3=P3data(3,:);
+% subplot(2,2,4);
+% plot(costh,P0,costh,P1,costh,P2,costh,P3);
+% xlabel('cos \theta');
+% ylabel('P_n (cos \theta)');
 
 
 
 %% Demonstration of precision issues in matlab and formatted print statements (avoid subtracting number of vastly different magnitudes...)
-
 epssingle=eps(single(1.0));      %single precision smallest interval from number 1.0
 
 disp('1 (single precision):  ')
@@ -244,3 +242,9 @@ disp('1+double(eps) (single precision eps):  ');
 fprintf('%32.31f \n',double(1.0)+double(epssingle));
 disp('1+double(eps)/2.0 (single precision eps):  ');
 fprintf('%32.31f \n',double(1.0)+double(epssingle)/2);
+
+
+%%  MATLAB scoping for functions; this function is only visible within this script...
+function test=thisfun(x)
+  test=x.^2;
+end
