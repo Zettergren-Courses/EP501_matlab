@@ -49,7 +49,7 @@ while(difftot>tol && it<=maxit)
 end %while
 
 nit=it-1;
-if (n==maxit)
+if (nit==maxit)
     warning('Solution may not have converged fully...')
 end %if
 
