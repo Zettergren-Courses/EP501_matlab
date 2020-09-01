@@ -5,7 +5,6 @@
 %This script requires files containing the functions fun1D and fun2D.  
 
 
-
 %% Things illustrated during class
 
 % installing matlab
@@ -13,7 +12,6 @@
 % complex number manipulation, abs, angle, real, imaginary
 % random number generation:  rand, randn, histograms
 % publishing matlab content
-
 
 
 %% Create some 1D and 2D data for plotting
@@ -27,7 +25,6 @@ y1=fun1D(x,1,1,3);
 y2=fun1D(x,1.5,-1,2);
 Z1=fun2D(X,Y,2,0,0,3,4);
 Z2=fun2D(X,Y,5,2,-2,2,2);
-
 
 
 %% Plot various data
@@ -104,9 +101,8 @@ print('-depsc2','fig3.eps');
 A=[1,  2, 4; ...    %notice that the ellipses in matlab allows you to continue a line
    2, 12,-2; ...
    5, 26, 5];       %A(i,j) is the coefficient of the ith variable in the jth equation
-B=A';               %transpose of A
-
 b=[18; 9; 14];      %this is the column vector representing the RHS of the system
+B=A';               %transpose of A
 
 % Some basic commands to display variables
 disp('A = ');
@@ -223,7 +219,6 @@ disp(psi(:,3));
 % plot(costh,P0,costh,P1,costh,P2,costh,P3);
 % xlabel('cos \theta');
 % ylabel('P_n (cos \theta)');
-
 
 
 %% Demonstration of precision issues in matlab and formatted print statements (avoid subtracting number of vastly different magnitudes...)
