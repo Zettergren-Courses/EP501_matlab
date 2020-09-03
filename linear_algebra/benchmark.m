@@ -1,4 +1,5 @@
-%% Evaluate performance and scaling of Gaussian elimination by solving systems of different size
+% Evaluate performance and scaling of Gaussian elimination by solving systems of different size
+
 nvals=50:50:500;
 testtimes=zeros(size(nvals));
 lrep=1;     %how many times to repeat each test
