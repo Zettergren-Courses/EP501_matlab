@@ -1,3 +1,8 @@
+Test editing readme file
+blah
+blah
+blah
+
 # EP501 Example MATLAB Programs
 
 Example codes, assignments, and exams for the EP 501 (numerical methods) course at Embry-Riddle Aeronautical University.  This repository is a work in progress and will be updated as the semester progresses.  
