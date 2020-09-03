@@ -169,6 +169,7 @@ a1=10:-1:1;                        %count backward
 a1=a1(:);                          %convert to column vector
 disp(diag(a1,0));
 
+% LU decomp.
 disp('LU decomposition of A (A=L*U):  ')
 [L,U]=lu(A);
 disp('L = ');
@@ -176,6 +177,7 @@ disp(L);
 disp('U = ');
 disp(U);
 
+% Eigenvalues
 disp('Eigenvalues of A = ');
 [psi,lambda]=eig(A);
 disp(lambda);
