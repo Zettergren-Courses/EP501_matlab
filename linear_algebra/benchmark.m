@@ -2,7 +2,7 @@
 
 nvals=50:50:500;
 testtimes=zeros(size(nvals));
-lrep=1;     %how many times to repeat each test
+lrep=10;     %how many times to repeat each test
 
 disp('Start of tests of Gaussian-elimination scaling');
 for in=1:numel(nvals)
@@ -24,4 +24,4 @@ figure(2);
 plot(nvals,testtimes,'o','LineWidth',2,'MarkerSize',20,'MarkerFaceColor','blue')
 xlabel('system size');
 ylabel('time to solve (s)');
-title('Empirical Performance of Gaussian Elimination');
+title('Empirically Determined Performance of Gaussian Elimination');
