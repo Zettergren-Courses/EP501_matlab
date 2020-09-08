@@ -6,7 +6,7 @@
 
 %% Illustrate the number of operations needed to implement Cramer's rule
 n=1:10;
-nops=(n-1).*factorial(n+1)+n;      %see book for justification
+nops=(n-1).*factorial(n+1)+n;      %see book for discussion
 figure(1);
 loglog(n,nops,'o','LineWidth',2,'MarkerSize',20,'MarkerFaceColor','blue');
 xlabel('size of system (# of unknowns)');
@@ -29,7 +29,7 @@ disp(x);
 
 
 %% Illustrate vanilla forward elimination
-nref=length(b);                %system size for larger reference problem
+nref=length(b);                %system size for reference problem
 
 %note that the elimination procedure coded below modifies the matrix B
 Awork=cat(2,A,b);          %This is our working version of the matrix used to perform elimination (i.e. it will be modified)
