@@ -15,8 +15,8 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 1.  located in ./linear\_algebra/Ch1.m
 2.  illustrates and checks various methods for solving matrix problems
 3.  contains functions for Gaussian elimination (Gauss\_elim.m) and backsubstitution (backsub.m)
-4.  contains examples of simple elimination and Gaussian elimination
-5.  contains examples of iterative solutions to systems of equations
+4.  contains examples of simple elimination (elimination\_example.m) and Gaussian elimination (Gauss\_elim\_example.m)
+5.  contains examples of iterative solutions to systems of equations (Jacobi\_example.m)
 
 
 ## Codes not yet updated as of FA2020 semester
