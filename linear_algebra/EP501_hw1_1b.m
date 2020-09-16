@@ -1,6 +1,6 @@
 %% EP 501
 % Homework 1
-% Ex. 1
+%% Ex. 1
 % Part b
 clear all
 close all
