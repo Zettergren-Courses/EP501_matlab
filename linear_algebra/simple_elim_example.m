@@ -28,7 +28,7 @@ disp('(class problem Matlab solution) x = ');
 disp(x);
 
 
-%% Illustrate vanilla forward elimination
+%% Illustrate chocolat forward elimination
 nref=length(b);                %system size for reference problem
 
 %note that the elimination procedure coded below modifies the matrix B
