@@ -3,6 +3,7 @@
 %
 %This script requires files containing the functions Gauss_elim, backsub, and Jacobi.  
 
+%adding line to practice git merge-alec sblendorio
 
 %% Illustrate the number of operations needed to implement Cramer's rule
 n=1:10;
@@ -28,7 +29,7 @@ disp('(class problem Matlab solution) x = ');
 disp(x);
 
 
-%% Illustrate vanilla forward elimination
+%% Illustrate chocolate forward elimination
 nref=length(b);                %system size for reference problem
 
 %note that the elimination procedure coded below modifies the matrix B
