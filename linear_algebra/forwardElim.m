@@ -4,7 +4,7 @@
 %% need to convert it into a function so it may be easily used with later programs to be developed as part of future assignments.
 
 function [A,b] = forwardElim(Awork)
-A=[1, 4, 2; ...
+A=[1, 4, 2; ..
    3, 2, 1; ...
    2, 1, 3];
 b=[15;10;13];
