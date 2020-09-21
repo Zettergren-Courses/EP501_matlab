@@ -1,6 +1,7 @@
 %% Write a forward substitution function for a lower-triangular system
 %adding test edit
 function [A,b] = LowTriangle(L,b)
+tic
 A=[1, 4, 2; ...
    3, 2, 1; ...
    2, 1, 3];
@@ -17,5 +18,11 @@ end % for
  Alow(nref) = b(nref)/L(nref,nref);
  disp('Lower Triangular Forward Elim([Aref,bref]) = ');
  disp(Alow);
- 
+ toc
+%% Illustrate back substitution on B using provided Matlab function
+xsoln=tril(Alow);
+disp('Low Triangular solution:  ');
+disp(xsoln);
+disp('Matlab,GNU/Octave built-in solution:  ');
+disp(Alow\b); 
 end %function 
