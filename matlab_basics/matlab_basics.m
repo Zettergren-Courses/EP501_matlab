@@ -13,6 +13,8 @@
 % random number generation:  rand, randn, histograms
 % publishing matlab content
 
+%adding stuff here for edit test
+
 
 %% Create some 1D and 2D data for plotting
 % independent coordinates

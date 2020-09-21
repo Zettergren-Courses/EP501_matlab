@@ -3,6 +3,7 @@
 %
 %This script requires files containing the functions Gauss_elim, backsub, and Jacobi.  
 
+%adding line to practice git merge-alec sblendorio
 
 %% Illustrate the number of operations needed to implement Cramer's rule
 n=1:10;

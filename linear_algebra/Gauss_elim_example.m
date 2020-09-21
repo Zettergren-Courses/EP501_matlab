@@ -1,5 +1,5 @@
 %% Illustrate vanilla forward elimination
-nref=6;                %system size for larger reference problem
+nref=6;                 %system size for larger reference problem
 A=randn(nref,nref);    %augmented matrix containing RHS of system of equations, in practice you'd want to check conditioning...
 b=randn(nref,1);    %RHS
 
