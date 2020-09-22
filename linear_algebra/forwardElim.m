@@ -1,7 +1,6 @@
 %%Problem #1 
 %%Write a MATLAB or Python function that uses simple forward elimination (without pivoting or scaling, viz. not Gaussian elimination).
 %%Note that this has already been implemented in script form in class; 
-%% need to convert it into a function so it may be easily used with later programs to be developed as part of future assignments.
 
 function [Awork] = forwardElim(A,b)
 tic
