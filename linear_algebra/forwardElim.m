@@ -3,12 +3,12 @@
 %%Note that this has already been implemented in script form in class; 
 %% need to convert it into a function so it may be easily used with later programs to be developed as part of future assignments.
 
-function [A,b] = forwardElim(Awork)
+function [Awork] = forwardElim(A,b)
 tic
-A=[1, 4, 2; ...
-   3, 2, 1; ...
-   2, 1, 3];
-b=[15;10;13];
+% A=[1, 4, 2; ...
+%    3, 2, 1; ...
+%    2, 1, 3];
+% b=[15;10;13];
 
 nref=length(b);                %system size for reference problem
 
