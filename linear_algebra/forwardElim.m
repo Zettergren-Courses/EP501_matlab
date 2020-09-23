@@ -3,12 +3,6 @@
 %%Note that this has already been implemented in script form in class; 
 
 function [Awork] = forwardElim(A,b)
-tic
-% A=[1, 4, 2; ...
-%    3, 2, 1; ...
-%    2, 1, 3];
-% b=[15;10;13];
-
 nref=length(b);                %system size for reference problem
 
 %note that the elimination procedure coded below modifies the matrix B
@@ -22,15 +16,12 @@ end %for
 
 disp('elim([Aref,bref]) = ');
 disp(Awork);
-toc
 %% Illustrate back substitution on B using provided Matlab function
-tic
 xsoln=backsub(Awork);
 disp('Elimination/back sub solution:  ');
 disp(xsoln);
 disp('Matlab,GNU/Octave built-in solution:  ');
 disp(A\b);
-toc
 end %function 
 
 
