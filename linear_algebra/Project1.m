@@ -5,8 +5,7 @@
 % Problem #1: Develop some basic elimination and substitution tools for linear equations
 % Problem #2: Elimination methods for computing matrix inverses
 % Problem #3: Numerical approaches for computing determinants
-%%
-%function Project1(forwardElim,@LowTriangle)
+
 %% Import test data for calibration of software
 Data1 = importdata('/Users/alecsblendorio/Documents/Projects/EP501_assignments/assignments/HW1/lowertriang_testproblem.mat');
 Data2 = importdata('/Users/alecsblendorio/Documents/Projects/EP501_assignments/assignments/HW1/testproblem.mat');
@@ -37,6 +36,7 @@ disp(t);
 soln4 = @gaussjordanElim;
 g = soln4(A,b);
 disp(g);
+
 
 %% Problem #3: Numerical approaches for computing determinants
 %%Part A and B: Create Gaussian Elimination function with Determinant
