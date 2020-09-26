@@ -30,12 +30,13 @@ y = soln2(L,bL);
 
 %% Problem #2: Elimination methods for computing matrix inverses
 %%Part A: Forward Elimination for RHS 
-
-%%Part B and C: Gauss-Jordan Elimination with back substitution and Inverse
-
-
-
-%%Part D: Compare Results with Matlab
+soln3 = @fwdElimrhs;
+t = soln3(A,b);
+disp(t);
+%%Part B,C, and D: Gauss-Jordan Elimination with back substitution and Inverse
+soln4 = @gaussjordanElim;
+g = soln4(A,b);
+disp(g);
 
 %% Problem #3: Numerical approaches for computing determinants
 %%Part A and B: Create Gaussian Elimination function with Determinant
