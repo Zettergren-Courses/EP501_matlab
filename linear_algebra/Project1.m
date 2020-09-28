@@ -43,7 +43,7 @@ disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER END%%%%%%%%%%%%%%%%%%');
 %%Part A and B: Create Gaussian Elimination function with Determinant
 %%solution, compare to Matlab
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
-soln5 = @determinantfunc;
+soln5 = @determinant;
 h = soln5(A,b);
 disp(h);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER END%%%%%%%%%%%%%%%%%%');
