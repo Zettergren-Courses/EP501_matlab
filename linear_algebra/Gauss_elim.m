@@ -17,7 +17,8 @@ if (nargin<3)
 end %if
 
 %Need to error check for square input.  
-
+%setup "counter" that counts the number of row swaps
+count = 1;
 %Allocation of space and setup
 Amod=cat(2,A,b);          %make a copy of A and modify with RHS of system
 n=size(A,1);              %number of unknowns
@@ -74,5 +75,24 @@ for ir1=1:n-1
         disp(Amod(ord,:));
     end %if
 end %for
+
+%calculate determinant here utilizing several tools
+
+%first need to re-order the matrix 
+Areorder = Amod(ord,:);
+%once re-ordered, compute the backsubstitution 
+xback = backsub(Areorder);
+disp('Back Substitution of matrix:');
+disp(xback);
+%to compute determinant need to take the product of the diagonals of the
+%reordered matrix
+determinant1 = prod(diag(Areorder));
+%apply "counter" 
+Adet = determinant1*count;
+disp('The determinant of the Matrix A is:')
+disp(Adet);
+
+disp('Matlab,GNU/Octave built-in solution:');
+disp(det(A));
 
 end %function

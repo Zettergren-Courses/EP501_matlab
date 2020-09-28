@@ -26,11 +26,17 @@ end %for
 disp('elim([Aref,bref]) = ');
 disp(Ajord);
 
-%% Illustrate back substitution on B using provided Matlab function
-%%Find the inverse of the matrix and compare to provided Matlab Function
-xsoln=backsub(Ajord);
-disp('Elimination/back sub solution:  ');
-disp(xsoln);
-disp('Matlab,GNU/Octave built-in solution:  ');
-disp(A\b);
+%Add back elimination here
+
+
+
+% %% Illustrate back substitution on B using provided Matlab function
+% %%Find the inverse of the matrix and compare to provided Matlab Function
+% xsoln=backsub(Ajord);
+% disp('Elimination/back sub solution:  ');
+% disp(xsoln);
+% disp('Matlab,GNU/Octave built-in solution:  ');
+% disp(A\b);
+
+
 end %function 
