@@ -4,7 +4,6 @@ function x=backsub(A)
 % been modified by concatenating the RHS of the system.  
 % Note that B is assumed to be upper triangular at this point.
 
-
 n=size(A,1);                   %number of unknowns in the system
 x=zeros(n,1);                  %space in which to store our solution vector
 x(n)=A(n,n+1)/A(n,n);          %finalized solution for last variable, resulting from upper triangular conversion

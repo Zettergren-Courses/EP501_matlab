@@ -19,6 +19,7 @@ bL = Data1.bL;
 
 %% Problem #1: Develop some basic elimination and substitution tools for linear equations
 %%Part A and B: Upper Triangular
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #1 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
 soln = @forwardElim;
 x = soln(A,b);
 disp(x);
@@ -26,9 +27,10 @@ disp(x);
 %%Part C and D: Lower Triangular
 soln2 = @LowTriangle;
 y = soln2(L,bL);
-
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #1 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #2: Elimination methods for computing matrix inverses
 %%Part A: Forward Elimination for RHS 
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
 soln3 = @fwdElimrhs;
 t = soln3(A,b);
 disp(t);
@@ -36,14 +38,15 @@ disp(t);
 soln4 = @gaussjordanElim;
 g = soln4(A,b);
 disp(g);
-
-
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #3: Numerical approaches for computing determinants
 %%Part A and B: Create Gaussian Elimination function with Determinant
 %%solution, compare to Matlab
-
-
-%end %main function 
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
+soln5 = @determinant;
+h = soln5(A,b);
+disp(h);
+disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER END%%%%%%%%%%%%%%%%%%');
 
 %% END PROJECT #1 
 
