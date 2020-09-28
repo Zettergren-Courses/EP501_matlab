@@ -1,4 +1,4 @@
-function [Amod,ord]=determinantfunc(A,b)
+%function [Amod,ord]=determinantfunc(A,b)
 
 %%Illustrate vanilla forward elimination
 nref=6;                 %system size for larger reference problem
@@ -14,15 +14,20 @@ xgauss=backsub(Amod(ord,:));
 disp('Back substitution solution using Gaussian elimination result:  ');
 disp(xgauss);
 
-%%Calculate Determinant of system
+%%Calculate Determinant of system by starting from upper triangular matrix
+%first determine if matrix is in upper triangular form 
+tf=istriu(Amod);
+disp('Is the matrix is in upper triangular form? 1 is Yes, 0 is No:');
+disp(tf);
+%use upper triangular matrix and expand along first column 
 
+%calculate determinant 
 
 
 % Print step by step solution (Gauss elimination) for a simple system to illustrate
  %disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
  %[Amodsmall,ord]=Gauss_elim(A,b,true);
  %disp('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%');
-
 
 %% Compare against built in MATLAB solution
 xmat=A\b;
@@ -34,4 +39,4 @@ disp('Built-in MATLAB solution for determinant');
 disp(d);
 
 
-end %function 
+%end %function 
