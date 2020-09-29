@@ -29,22 +29,18 @@ soln2 = @LowTriangle;
 y = soln2(L,bL);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #1 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #2: Elimination methods for computing matrix inverses
-%%Part A: Forward Elimination for RHS 
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
-soln3 = @fwdElimrhs;
-t = soln3(A,b);
-disp(t);
-%%Part B,C, and D: Gauss-Jordan Elimination with back substitution and Inverse
-soln4 = @gaussjordanElim;
-g = soln4(A,b);
+%%Part A B,C, and D: Gauss-Jordan Elimination with back substitution and Inverse
+soln3 = @gaussjordanElim;
+g = soln3(A,b);
 disp(g);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #3: Numerical approaches for computing determinants
 %%Part A and B: Create Gaussian Elimination function with Determinant
 %%solution, compare to Matlab
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
-soln5 = @determinant;
-h = soln5(A,b);
+soln4 = @determinant;
+h = soln4(A,b);
 disp(h);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER END%%%%%%%%%%%%%%%%%%');
 

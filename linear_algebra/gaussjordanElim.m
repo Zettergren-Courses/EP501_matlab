@@ -1,4 +1,4 @@
-%%Problem #2b,c,and d
+%%Problem #2
 %%Create a function that implements Gauss-Jordan elimination; 
 %%you should start from your forward elimination function for multiple RHS 
 %%and add the backward eliminations needed.
@@ -24,8 +24,7 @@ disp('elim([Aref,bref]) = ');
 disp(Ajord);
 
 %Backwards Eliminations Method 
-%Just need to reverse the indices and add instead of subtract in the
-%algorithm
+%Just need to reverse the indices and add instead of subtract in the algorithm
 
 for ir1=nref-1:-1:1
     %loop over rows from n to n-1 performing elimination, this index marks what row we are starting the elimination from (i.e. using) for this particular column
@@ -37,15 +36,24 @@ for ir1=nref-1:-1:1
     end %for
 end %for
 
+%row swap
 for ir1=1:length(b)
     Ajord(ir1,:)=Ajord(ir1,:)./Ajord(ir1,ir1);
 end %for
 
-x=Ajord(:,length(Ajord)-length(A));
 disp('Gauss-Jordan Elimination Solution is:');
+disp(abs(Ajord));
+
+for 
+    x=Ajord(:,length(Ajord)-length(A));
+end
+
+disp('Inverse of Gauss-Jordan:');
 disp(x.*A);
+
 disp('Matlab,GNU/Octave built-in solution:  ');
 disp(inv(A));
 
-
+% disp('Compared Solution');
+% disp(Ajord\A);
 end %function 
