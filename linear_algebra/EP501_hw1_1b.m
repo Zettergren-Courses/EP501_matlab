@@ -17,3 +17,10 @@ xsol=backsub(Asol);
 [Acheck,ord]=Gauss_elim(A,b);
 xgauss=backsub(Acheck(ord,:));
 xcheck=A\b;
+
+disp('Solution for simple elimination: ')
+disp(xsol)
+disp('Solution for Gaussian elimination: ')
+disp(xgauss)
+disp('Solution for built-in MatLab function: ')
+disp(xcheck)

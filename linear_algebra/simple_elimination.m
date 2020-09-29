@@ -1,4 +1,4 @@
-function Awork=simple_elimination(A,b)
+function [L,U]=simple_elimination(A,b)
 %EP501 Homework 1
 %Ex. 1
 %Part a
@@ -17,4 +17,4 @@ for ir1=2:nref       %loop over rows from 2 to n performing elimination, this in
         Awork(ir2,:)=Awork(ir2,:)-fact/Awork(ir1-1,ir1-1).*Awork(ir1-1,:);    %subtract off previous row modified by a factor that eliminates the ir-1 column term in this row (so it has only super-diagonal elements), this is a little bit wasteful as it uses entire row...
     end %for
 end %for
-
+end

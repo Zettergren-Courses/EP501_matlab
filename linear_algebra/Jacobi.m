@@ -1,6 +1,6 @@
 function [x,nit]=Jacobi(x0,A,b,tol,verbose)
 
-%% Check the inputs
+% Check the inputs
 narginchk(3,5);
 if nargin<4
     tol=1e-6;
@@ -10,7 +10,7 @@ if nargin<5
 end %if
 
 
-%% Setup iterations
+% Setup iterations
 maxit=100;    %max number of iterations
 n=size(A,1);  %system size
 residual=10*ones(n,1);
@@ -18,7 +18,7 @@ difftot=1e3+tol;   %max sure we enter iterations
 x=x0;
 
 
-%% Perform iterations
+% Perform iterations
 it=1;
 while(difftot>tol && it<=maxit)
     difftotprev=difftot;
