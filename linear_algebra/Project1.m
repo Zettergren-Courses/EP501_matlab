@@ -22,7 +22,6 @@ bL = Data1.bL;
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #1 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
 soln = @forwardElim;
 x = soln(A,b);
-disp(x);
  
 %%Part C and D: Lower Triangular
 soln2 = @LowTriangle;
@@ -33,7 +32,6 @@ disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
 %%Part A B,C, and D: Gauss-Jordan Elimination with back substitution and Inverse
 soln3 = @gaussjordanElim;
 g = soln3(A,b);
-disp(g);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #3: Numerical approaches for computing determinants
 %%Part A and B: Create Gaussian Elimination function with Determinant
@@ -41,7 +39,6 @@ disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER END%%%%%%%%%%%%%%%%%%');
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
 soln4 = @determinant;
 h = soln4(A,b);
-disp(h);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #3 ANSWER END%%%%%%%%%%%%%%%%%%');
 
 %% END PROJECT #1 

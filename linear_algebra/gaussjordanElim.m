@@ -44,12 +44,7 @@ end %for
 disp('Gauss-Jordan Elimination Solution is:');
 disp(abs(Ajord));
 
-for 
-    x=Ajord(:,length(Ajord)-length(A));
-end
-
-disp('Inverse of Gauss-Jordan:');
-disp(x.*A);
+x=Ajord(:,length(Ajord)-length(A));
 
 disp('Matlab,GNU/Octave built-in solution:  ');
 disp(inv(A));
