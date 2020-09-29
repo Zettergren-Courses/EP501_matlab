@@ -29,6 +29,8 @@ y = soln2(L,bL);
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #1 ANSWER END%%%%%%%%%%%%%%%%%%');
 %% Problem #2: Elimination methods for computing matrix inverses
 disp('%%%%%%%%%%%%%%%%%%PROBLEM #2 ANSWER BEGIN%%%%%%%%%%%%%%%%%%');
+%%I was not able to complute the Inverse of the test matrix using the
+%%Gauss-Jordan Elimination method.
 %%Part A B,C, and D: Gauss-Jordan Elimination with back substitution and Inverse
 soln3 = @gaussjordanElim;
 g = soln3(A,b);
