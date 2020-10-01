@@ -6,14 +6,23 @@
 
 %% Common setup for closed domain problems
 maxit=100;       %maximum number of iterations allowed
-f=@objfun1;      %set the function for which we are finding roots, change to illustrate different problems
-fprime=@objfun1_deriv;
+f=@objfun2;      %set the function for which we are finding roots, change to illustrate different problems
+fprime=@objfun2_deriv;
 minx=0;          %interval over which we are finding root (closed domain problems)
 maxx=2*pi;
 tol=1e-9;        %how close to zero we need to get to cease iterations
-x=linspace(minx,maxx,24);   %grid for basic plotting purposes
+x=linspace(minx,maxx,64);   %grid for basic plotting purposes
 ygrid=f(x);
 verbose=true;
+
+
+%% Plot the function we are finding roots for
+figure(1);
+plot(x,ygrid);
+title('Objective function')
+xlabel('x')
+ylabel('y')
+axis tight;
 
 
 %% Newton-Rhapson root-finding method

@@ -13,19 +13,21 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 ### Numerical linear algebra
 
 1.  located in ./linear\_algebra/Ch1.m
-2.  illustrates and checks various methods for solving matrix problems
+2.  Illustrates and checks various methods for solving matrix problems
 3.  contains functions for Gaussian elimination (Gauss\_elim.m) and backsubstitution (backsub.m)
 4.  contains examples of simple elimination (simple\_elim\_example.m) and Gaussian elimination (Gauss\_elim\_example.m)
 5.  contains examples of iterative solutions to systems of equations (Jacobi\_example.m)
 
-
-## Codes not yet updated as of FA2020 semester
-
 ### Nonlinear equations
 
-1.  located in ./nonlinear
-2.  contains various functions related to Newton's method
+1.  located in ./nonlinear_eqns
+2.  Contains examples illustrating solutions of various nonlinear equations and systems
+3.  Contains examples of interval halving (interval\_halving.m) and false position (false\_position.m)
+4.  Contains various functions for exact Newton's method in 1D (newton\_exact.m) and 2D (newton2D\_exact.m)
+5.  Contains objective function which can be used as examples to demonstrate root finding algorithms (objfun*.m)
 
+
+## Codes not yet updated as of FA2020 semester
 
 ### Polynomials and fitting
 
