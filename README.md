@@ -22,7 +22,7 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 
 1.  located in ./nonlinear_eqns
 2.  Contains examples illustrating solutions of various nonlinear equations and systems
-3.  Contains examples of interval halving (interval\_halving.m) and false position (false\_position.m)
+3.  Contains examples of interval halving (interval\_halving.m), false position (false\_position.m), Newton's method for a single variable equation (Newton\_Rhapson.m), and Newton's method for a 2D equation (Newton\_Rhapson2D.m).
 4.  Contains various functions for exact Newton's method in 1D (newton\_exact.m) and 2D (newton2D\_exact.m)
 5.  Contains objective function which can be used as examples to demonstrate root finding algorithms (objfun*.m)
 
