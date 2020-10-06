@@ -6,6 +6,8 @@
 
 %% Params for Newton iteration
 maxit=100;       %maximum number of iterations allowed
+minx=0;
+maxx=2*pi;
 tol=1e-9;        %how close to zero we need to get to cease iterations
 
 
