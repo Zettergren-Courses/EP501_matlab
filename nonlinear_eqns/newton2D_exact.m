@@ -51,8 +51,13 @@ while(~converged && it<=maxit)
     fvec=[fval;gval];
     [Amod,ord]=Gauss_elim(A,-1*fvec);
     dxvec=backsub(Amod(ord,:));
-    detA=prod(diag(Amod(ord,:)));
+    detA=prod(diag(Amod(ord,1:2)));
     if (abs(detA) < 1e-6)
+%         disp(A);
+%         disp(rootx)
+%         disp(rooty);
+%         disp(fval);
+%         disp(gval);
         error(' Ended up at a point where Newton iteration is singular, try a different starting point')
     end %if
     

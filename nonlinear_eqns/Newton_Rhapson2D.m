@@ -13,8 +13,10 @@ G=gm(X,Y);
 
 
 %% Newton's method for multi-variable nonlinear equations
-x0=i;
-y0=0.258*i;
+%x0=i;
+%y0=0.258*i;
+x0=0.5;
+y0=0.1;
 [xm,ym,it2D,success2D]=newton2D_exact(fm,gradfm,gm,gradgm,x0,y0,100,1e-6,true);
 
 figure;

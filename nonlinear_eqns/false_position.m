@@ -21,6 +21,7 @@ while (~converged && it<=maxit)
     
     c=a-f(a)/((f(b)-f(a))/(b-a));
     
+    % FIXME:  error checking for no sign change for either interval
     aprev=a;           %save these for plotting
     bprev=b;
     if(f(a)*f(c)<0)    %c will be our new endpoint
