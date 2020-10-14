@@ -9,6 +9,7 @@ function [Amod,ord,determinant]=Gausselim_det(A,b,verbose)
 % is given by row-permuted matrix Amod(ord,:).  The verbose flag can be set to
 % true or false (or omitted, default=false) in order to print out what the algirthm
 % is doing for each elimination step.
+%In addition, it performs the determinant calculation
 
 %Parse the inputs, throw an error if something is obviously wrong with input data
 narginchk(2,3);

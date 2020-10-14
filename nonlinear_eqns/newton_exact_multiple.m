@@ -1,19 +1,20 @@
-function [root,it,success]=newton_exact(f,fprime,x0,maxit,tol,verbose)
-% 
+function [root,it,success]=newton_exact_multiple(f,fprime,f2,x0,maxit,tol,verbose)
+
 % root=newton_exact(f,fprime)
 % 
 % finds a set of roots corresponding to the function f (input as a handle)
-% given a function which computes the derivative
+% given a function which computes the first and second derivative
+% This functions implements a solver for polynomials with multiple roots
 
 % Error checking of input
-narginchk(3,6);   %check for correct number of inputs to function
-if (nargin<4)
+narginchk(4,7);   %check for correct number of inputs to function
+if (nargin<5)
     maxit=100;       %maximum number of iterations allowed
 end %if
-if (nargin<5)
+if (nargin<6)
     tol=1e-6;        %how close to zero we need to get to cease iterations
 end %if
-if (nargin<6)
+if (nargin<7)
     verbose=false;
 end %if
 
@@ -32,12 +33,14 @@ fval=f(root);
 converged=false;
 while(~converged && it<=maxit)
     derivative=fprime(root);
+    derivative2=f2(root);
+    
     if (abs(derivative)<100*tol)    %this (inflection point) will end up kicking the root really far away...
         converged=false;
         warning(' Derivative close to zero, terminating iterations with failed convergence... ');
         break;
     else
-        root=root-fval./derivative;    % update root estimate
+        root=root-((fval*derivative)/(derivative^2-derivative*derivative2));    % update root estimate
         fval=f(root);                  % see how far off we are from zero...
         if (verbose)
             fprintf(' iteration: %d; root:  %f + %f i; function value: %f, derivative:  %f \n',it,real(root),imag(root),fval,derivative);
