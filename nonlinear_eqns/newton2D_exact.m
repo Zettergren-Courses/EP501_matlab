@@ -53,11 +53,6 @@ while(~converged && it<=maxit)
     dxvec=backsub(Amod(ord,:));
     detA=prod(diag(Amod(ord,1:2)));
     if (abs(detA) < 1e-6)
-%         disp(A);
-%         disp(rootx)
-%         disp(rooty);
-%         disp(fval);
-%         disp(gval);
         error(' Ended up at a point where Newton iteration is singular, try a different starting point')
     end %if
     
@@ -69,7 +64,7 @@ while(~converged && it<=maxit)
         fprintf(' iteration: %d; x:  %f + %f i; y:  %f + %f i; f: %f, g:  %f\n',it,real(rootx),imag(rootx),real(rooty),imag(rooty),fval,gval);
     end %if
     it=it+1;
-    converged=abs(fval)+abs(gval)<tol;
+    converged=abs(fval)<tol & abs(gval)<tol;
 end %while
 it=it-1;
 
