@@ -12,28 +12,28 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 
 ### Numerical linear algebra
 
-1.  located in ./linear\_algebra/Ch1.m
+1.  Located in ./linear\_algebra/Ch1.m
 2.  Illustrates and checks various methods for solving matrix problems
 3.  contains functions for Gaussian elimination (Gauss\_elim.m) and backsubstitution (backsub.m)
-4.  contains examples of simple elimination (simple\_elim\_example.m) and Gaussian elimination (Gauss\_elim\_example.m)
-5.  contains examples of iterative solutions to systems of equations (Jacobi\_example.m)
+4.  Contains examples of simple elimination (simple\_elim\_example.m) and Gaussian elimination (Gauss\_elim\_example.m)
+5.  Contains examples of iterative solutions to systems of equations (Jacobi\_example.m)
 
 ### Nonlinear equations
 
-1.  located in ./nonlinear_eqns
+1.  Located in ./nonlinear_eqns
 2.  Contains examples illustrating solutions of various nonlinear equations and systems
 3.  Contains examples of interval halving (interval\_halving.m), false position (false\_position.m), Newton's method for a single variable equation (Newton\_Rhapson.m), and Newton's method for a 2D equation (Newton\_Rhapson2D.m).
 4.  Contains various functions for exact Newton's method in 1D (newton\_exact.m) and 2D (newton2D\_exact.m)
 5.  Contains objective function which can be used as examples to demonstrate root finding algorithms (objfun*.m)
 
-
-## Codes not yet updated as of FA2020 semester
-
 ### Polynomials and fitting
 
-1.  located in ./polynomials
-2.  contains examples of direct and approximate polynomial fits to data
-3.  contains test data for some homework problems
+1.  Located in ./polynomials
+2.  Contains examples of direct and approximate polynomial fits to data
+3.  Contains various examples of direct fitting (direct\_fit.m), linear least squares (least\_squares.m), and bilinear/spline interpolation (interpolation\_examples.m).  
+
+
+## Codes not yet updated as of FA2020 semester
 
 
 ### Numerical differentiation and integration
