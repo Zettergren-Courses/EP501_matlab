@@ -32,16 +32,14 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 2.  Contains examples of direct and approximate polynomial fits to data
 3.  Contains various examples of direct fitting (direct\_fit.m), linear least squares (least\_squares.m), and bilinear/spline interpolation (interpolation\_examples.m).  
 
-
-## Codes not yet updated as of FA2020 semester
-
-
 ### Numerical differentiation and integration
 
 1.  located in ./differentiation
 2.  examples of finite difference formulas and applications
-3.  one-dimensional and multi-dimensional examples (e.g. gradient operator)
+3.  one-dimensional (derivative\_examples.m) and multi-dimensional scripts (e.g. gradient operator, partial\_derivative\_examples.m)
 
+
+## Codes not yet updated as of FA2020 semester
 
 ### Ordinary differential equations (ODEs)
 
@@ -51,7 +49,3 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 ### Partial differential equations (PDEs)
 
 1.  location in ./PDEs
-
-
-more stuff
-more stuff
