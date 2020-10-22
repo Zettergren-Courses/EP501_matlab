@@ -42,7 +42,6 @@ legend('original function','analytical','centered','backward')
 xlabel('x');
 ylabel('y(x) or y''(x)');
 title('Comparison of finite difference derivative approximations');
-set(gca,'FontSize',24);
 
 % %% Demonstrate effects of grid refinement (convergence)
 % lx2=256;
