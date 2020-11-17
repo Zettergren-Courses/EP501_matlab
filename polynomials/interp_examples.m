@@ -18,7 +18,7 @@ M=[ones(4,1),xvec(:),yvec(:),xvec(:).*yvec(:)];
 avec=backsub(Mmod(order,:));
 finterpmanual=avec(1)+avec(2)*x1+avec(3)*y1+avec(4)*x1*y1;
 
-% Matlab version
+% Matlab version of bilinear interpolation
 finterp=interp2(X,Y,f,x1,y1);
 
 %Visual interpolation point:  x1,y1
@@ -36,7 +36,7 @@ hold off;
 
 
 %% Illustrate cubic spline approximations using Matlab functions
-x=linspace(-5,5,15);
+x=linspace(-5,5,500);
 y=sin(x);
 figure(2);
 plot(x,y,'o','MarkerSize',20);
