@@ -38,12 +38,14 @@ Example codes, assignments, and exams for the EP 501 (numerical methods) course 
 2.  examples of finite difference formulas and applications
 3.  one-dimensional (derivative\_examples.m) and multi-dimensional scripts (e.g. gradient operator, partial\_derivative\_examples.m)
 
-
-## Codes not yet updated as of FA2020 semester
-
 ### Ordinary differential equations (ODEs)
 
 1.  located in ./ODEs
+2.  examples of Methods for solving ordinary differential equations
+3.  Euler methods (Euler\_methods.m), Runge-Kutta solutions (RK\_methods.m), examples of resolving systems of ODEs (RK\_systems.m), and backward difference formula comparisons (BDF\_examples.m).
+
+
+## Codes not yet updated as of FA2020 semester
 
 
 ### Partial differential equations (PDEs)
