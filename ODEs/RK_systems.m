@@ -35,13 +35,6 @@ for n=2:lt
     vx(n)=vx(n-1)+dt*(omega*vyhalf);
     vy(n)=vy(n-1)-dt*(omega*vxhalf);    
 end %for
-figure(1);
-ax=plotyy(t,vx,t,vy);
-set(ax(1),'FontSize',20);
-set(ax(2),'FontSize',20);
-xlabel('time (s)');
-ylabel(ax(1),'v_x');
-ylabel(ax(2),'v_y');
 
 
 %Integrate velocity to get position as a fn. of time, this assumes that the
@@ -51,7 +44,17 @@ y=cumtrapz(t,vy);
 vz=1e3;
 z=vz*t;
 
-%comet plot demo
+
+% Plot velocity solutions
+figure(1);
+ax=plotyy(t,vx,t,vy);
+set(ax(1),'FontSize',20);
+set(ax(2),'FontSize',20);
+xlabel('time (s)');
+ylabel(ax(1),'v_x');
+ylabel(ax(2),'v_y');
+
+% Comet plot demo
 figure(2);
 comet3(x,y,z)
 set(gca,'FontSize',20);

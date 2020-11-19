@@ -10,7 +10,7 @@ figure;
 %% Time grid
 tsmin=0;
 tsmax=4;
-dts=0.02;      % choice of time step
+dts=0.0015;      % choice of time step
 ts=tsmin:dts:tsmax;
 
 
