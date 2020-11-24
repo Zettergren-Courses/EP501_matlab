@@ -16,10 +16,10 @@ dy=y(2)-y(1);    %ditto
 
 
 %% Define Dirichlet boundary conditions for the test problem:
-f1=zeros(lx,1);
-f2=sin(2*pi*x);
-g1=zeros(1,ly);
-g2=zeros(1,ly);
+f1=zeros(lx,1);    % bottom boundary condition
+f2=sin(2*pi*x);    % top
+g1=zeros(1,ly);    % left
+g2=zeros(1,ly);    % right
 b=zeros(N,1);
 
 
@@ -103,7 +103,7 @@ set(gca,'FontSize',20);
 
 %% Solution with Jacobi iterative solver from repo
 verbose=false;  
-tol=1e-6;
+tol=1e-2;
 Phi0=zeros(N,1);
 disp('Solve time for repo Jacobi iter:  ');
 tic
