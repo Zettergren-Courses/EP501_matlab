@@ -1,26 +1,33 @@
 %% Need some linear algebra tools in order to solve elliptic equations
+% del^2 Phi = 0 
+% 
+% encoded as a matrix system of the form:
+% M * Phi = b
+%
 addpath ../linear_algebra;
 
 
 %% Define a 2D grid in x,y for a test problem
-lx=32;
-ly=32;
-N=lx*ly;
+lx=25;                 % grid size in x
+ly=25;                 % size of grid in y-direction
+N=lx*ly;               % total number of grid points
 a=1;
-b=a;     %use a square region for a test problem
+b=a;                   % use a square region for a test problem
 x=linspace(0,a,lx);
 y=linspace(0,b,ly);
-dx=x(2)-x(1);    %constant grid spacing
-dy=y(2)-y(1);    %ditto
+dx=x(2)-x(1);          % constant grid spacing
+dy=y(2)-y(1);          % ditto
 [X,Y]=meshgrid(x,y);
 
 
 %% Define Dirichlet boundary conditions for the test problem:
-f1=zeros(lx,1);    % bottom boundary condition
-f2=sin(2*pi*x);    % top
-g1=zeros(1,ly);    % left
-g2=zeros(1,ly);    % right
-b=zeros(N,1);
+f1=zeros(lx,1);    % bottom boundary condition, y=0
+f2=sin(2*pi*x);    % top, y=b
+g1=zeros(1,ly);    % left, x=0
+g2=zeros(1,ly);    % right, x=a
+%b=zeros(N,1);      % inhomogeneous terms
+b=32*exp(-(X-0.5).^2/(0.25)^2).*exp(-(Y-0.5).^2/(0.1)^2);
+b=b(:);
 
 
 %% Setup of matrix for solving FDEs system size is NxN=lx*ly x lx*ly
@@ -28,35 +35,35 @@ M=zeros(N,N);
 for j=1:ly
     for i=1:lx
         k=(j-1)*lx+i;
-        if(j==1)      %min y
+        if(j==1)      %min y boundary
             M(k,k)=1;
             
-            %RHS
+            %RHS of matrix system
             b(k)=f1(i);
-        elseif(j==ly) %max y
+        elseif(j==ly) %max y boundary 
             M(k,k)=1;
             
             %RHS
             b(k)=f2(i);            
-        elseif(i==1)    %min x
+        elseif(i==1)    %min x boundary
             M(k,k)=1;
             
             %RHS
             b(k)=g1(j);           
-        elseif(i==lx)   %max x
+        elseif(i==lx)   %max x boundary
             M(k,k)=1;
             
             %RHS
             b(k)=g2(j);            
         else
-          M(k,k-lx)=1/dy^2;
-          M(k,k-1)=1/dx^2;
-          M(k,k)=-2/dx^2-2/dy^2;
-          M(k,k+1)=1/dx^2;
-          M(k,k+lx)=1/dy^2;
+          M(k,k-lx)=1/dy^2;    % alphak
+          M(k,k-1)=1/dx^2;     % betak
+          M(k,k)=-2/dx^2-2/dy^2;   %gammak
+          M(k,k+1)=1/dx^2;         %deltak
+          M(k,k+lx)=1/dy^2;        %epsilonk
           
           %RHS
-          b(k)=0;
+          %b(k)=0;
         end %if
     end %for
 end %for
@@ -103,7 +110,7 @@ set(gca,'FontSize',20);
 
 %% Solution with Jacobi iterative solver from repo
 verbose=false;  
-tol=1e-2;
+tol=1e-1;
 Phi0=zeros(N,1);
 disp('Solve time for repo Jacobi iter:  ');
 tic
@@ -131,7 +138,7 @@ Phismatlab=reshape(Phismatlab,[lx,ly])';
 toc
 
 
-%% Compute and plot the analytical solution
+%% Compute and plot the analytical solution (see ./test_problems/ for derivation)
 Phiexact=sinh(2*pi*Y)./sinh(2*pi).*sin(2*pi*X);
 
 subplot(1,4,4);

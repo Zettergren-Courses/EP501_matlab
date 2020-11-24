@@ -1,7 +1,3 @@
-%% Need some linear algebra tools in order to solve elliptic equations
-addpath ../linear_algebra;
-
-
 %% Define a 1D space and time grid in x for test problem
 lx=64;
 a=0;     %here a,b are the endpoints of the x-domain
@@ -16,7 +12,7 @@ tau=1/(2*pi/(2*dx))^2/lambda;    %diffusion time scale for the equation, based o
 %dt=tau/5;              %time step
 
 dtmargin=1/lambda/2*dx^2;
-dt=25*dtmargin;
+dt=0.5*dtmargin;
 tmin=0;
 tmax=1024*tau;          %go out to three times the diffusion time scale for the smallest possible mode
 t=tmin:dt:tmax;
@@ -105,7 +101,7 @@ title('C-N solution');
 set(gca,'FontSize',16);
 
 
-%% Compute and plot the analytical solution (see https://github.com/gemini3d/GEMINI-docs/blob/master/test_descriptions/GEMINItests.pdf for a derivation)
+%% Compute and plot the analytical solution (see course repository ./test_problems/ for derivation)
 [T,X]=meshgrid(t,x);
 tempexact=exp(-4*pi^2*lambda*T).*sin(2*pi*X)+exp(-64*pi^2*lambda*T).*sin(8*pi*X);
 
@@ -123,7 +119,3 @@ set(gca,'FontSize',16);
 
 
 %% Adaptive time stepping?
-
-
-%% Reset paths when we are done (for consistency, cleanliness)
-rmpath ../linear_algebra;
