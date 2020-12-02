@@ -17,23 +17,43 @@ B=10000e-9;
 omega=q*B/m;    %frequency of oscillation (can be shown via solution by hand gives a SHO)
 tmin=0;
 tmax=2*2*pi/abs(omega);    % follow particle for two oscillation periods
-t=linspace(tmin,tmax,50);
+t=linspace(tmin,tmax,30);
 dt=t(2)-t(1);
 lt=numel(t);
+
+% vx=zeros(1,lt);
+% vy=zeros(1,lt);
+% vx(1)=1e3;     % vx initial conditions
+% vy(1)=1e3;     % vy initial conditions
+% % Loop for applying RK2 to a system of two equations
+% for n=2:lt
+%     %step x and y components together, this is the half update
+%     vxhalf=vx(n-1)+dt/2*(omega*vy(n-1));
+%     vyhalf=vy(n-1)-dt/2*(omega*vx(n-1));
+%     
+%     %now the full update
+%     vx(n)=vx(n-1)+dt*(omega*vyhalf);
+%     vy(n)=vy(n-1)-dt*(omega*vxhalf);    
+% end %for
+
 
 vx=zeros(1,lt);
 vy=zeros(1,lt);
 vx(1)=1e3;     % vx initial conditions
 vy(1)=1e3;     % vy initial conditions
-% Loop for applying RK2 to a system of two equations
+% Loop for applying RK3 to a system of two equations
 for n=2:lt
-    %step x and y components together, this is the half update
-    vxhalf=vx(n-1)+dt/2*(omega*vy(n-1));
-    vyhalf=vy(n-1)-dt/2*(omega*vx(n-1));
+    k1x=dt*(omega*vy(n-1));    %k1 for the x differential equation
+    k1y=-dt*(omega*vx(n-1));    %k1 for the y differential equation
     
-    %now the full update
-    vx(n)=vx(n-1)+dt*(omega*vyhalf);
-    vy(n)=vy(n-1)-dt*(omega*vxhalf);    
+    k2x=dt*omega*(vy(n-1)+k1y/2);
+    k2y=-dt*omega*(vx(n-1)+k1x/2);
+    
+    k3x=dt*omega*(vy(n-1)-k1y+2*k2y);
+    k3y=-dt*omega*(vx(n-1)-k1x+2*k2x);
+    
+    vx(n)=vx(n-1)+1/6*(k1x+4*k2x+k3x);
+    vy(n)=vy(n-1)+1/6*(k1y+4*k2y+k3y);
 end %for
 
 
